@@ -1,6 +1,14 @@
 ---
 name: feature
-description: Add a new feature or improvement to an EXISTING project using the same multi-agent workflow as kickoff — but adapted for existing codebases. Use when the user wants to extend, improve, or add functionality to a project that already exists. Trigger phrases: "füge ein Feature hinzu", "ich möchte X hinzufügen", "neue Funktion", "verbessere die App", "add a feature to", "extend the app", "I want to add", "neue Seite", "neuer Screen", "neue Komponente", "weiterentwickeln". Do NOT use for starting a brand new project from scratch — use the kickoff skill for that.
+description: >-
+  Add a new feature or improvement to an existing project using the same
+  multi-agent workflow as kickoff, but adapted for existing codebases.
+  Use when the user wants to extend, improve, or add functionality to a
+  project that already exists. Trigger phrases: fuege ein Feature hinzu,
+  ich moechte etwas hinzufuegen, neue Funktion, verbessere die App,
+  add a feature to, extend the app, I want to add, neue Seite,
+  weiterentwickeln. Do not use for starting a brand new project from
+  scratch - use the kickoff skill for that.
 ---
 
 # Feature — Weiterentwicklung bestehender Projekte

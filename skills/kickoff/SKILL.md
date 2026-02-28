@@ -1,6 +1,12 @@
 ---
 name: kickoff
-description: Start a new product development project with full multi-agent orchestration across 7 phases: Setup, Requirements, Design, Architecture, Implementation, QA, and Deployment. Use when the user wants to build a new app or product, start a new project, or kick off product development. Trigger phrases: "neues Projekt starten", "ich möchte eine App bauen", "lass uns bauen", "starte ein Projekt", "I want to build", "let's build", "new project", "kickoff", "start a project".
+description: >-
+  Start a new product development project with full multi-agent orchestration
+  across 7 phases: Setup, Requirements, Design, Architecture, Implementation,
+  QA, and Deployment. Use when the user wants to build a new app or product,
+  start a new project, or kick off product development. Trigger phrases:
+  neues Projekt starten, ich moechte eine App bauen, lass uns bauen,
+  starte ein Projekt, I want to build, new project, kickoff, start a project.
 ---
 
 # Kickoff — Product Development Workflow
