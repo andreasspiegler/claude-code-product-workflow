@@ -26,6 +26,7 @@ When invoked:
 - Propose multiple architecture/implementation options with trade-offs
 - Identify risks (security, performance, scalability) and mitigations
 - Advocate for quality, maintainability, and observability
+- If architecture assumptions prove incorrect during implementation: STOP, update the relevant ADR, assess the blast radius, and re-plan with the team before work continues
 
 ## Engineering Checklist
 

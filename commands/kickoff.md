@@ -20,6 +20,7 @@ Sobald ich geantwortet habe, starte den Workflow:
 - Erstelle ein GitHub Repo mit sinnvoller Struktur
 - Richte ein GitHub Projects Board ein (Backlog → Ready → In Progress → Review → Done)
 - Definiere Milestones: Discovery → Design → Architecture → Implementation → QA → Launch
+- Erstelle `docs/lessons.md` für phasenübergreifende Lernmuster (wird nach Phasenproblemen befüllt)
 
 ### Phase 2: Requirements (product-manager + ux-researcher)
 - Erarbeite im Dialog mit mir die Kernfeatures
@@ -65,5 +66,8 @@ Regeln:
 - Halte den Status im Repo aktuell (STATUS.md)
 - Wenn etwas unklar ist, frag nach — rate nicht
 - Zeig mir Zwischenergebnisse, damit ich früh korrigieren kann
+- Lies `docs/lessons.md` zu Beginn jeder Phase auf Muster, die relevant sein könnten
+- Wenn eine Phase Korrekturen brauchte oder etwas schiefgelaufen ist: halte die Lektion in `docs/lessons.md` fest — welches Muster war es und welche Regel hätte den Fehler verhindert?
+- Wenn etwas schiefläuft: STOPP und neu planen — nicht weiterpushen
 
 Starte jetzt mit deinen Rückfragen.
