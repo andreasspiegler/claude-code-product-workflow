@@ -87,7 +87,29 @@ mkdir -p ~/.claude/commands
 cp commands/kickoff.md ~/.claude/commands/
 ```
 
-### 3. Start a project
+### 3. Install the Nano Banana skill (for UI mockup generation)
+
+The `product-designer` agent uses this skill to generate UI mockups via the Gemini API.
+
+```bash
+# Install Gemini CLI
+npm install -g @google/gemini-cli
+
+# Create your .env file with your Gemini API key (get one at https://aistudio.google.com/)
+cp skills/nano-banana/.env.example skills/nano-banana/.env
+# Then edit skills/nano-banana/.env and add your key
+
+# Install the nanobanana extension
+gemini extensions install https://github.com/gemini-cli-extensions/nanobanana
+
+# Copy the skill to Claude Code
+mkdir -p ~/.claude/skills/nano-banana
+cp skills/nano-banana/SKILL.md ~/.claude/skills/nano-banana/
+```
+
+See [`skills/nano-banana/README.md`](skills/nano-banana/README.md) for full details.
+
+### 4. Start a project
 
 Open Claude Code and run:
 
