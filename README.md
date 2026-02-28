@@ -1,5 +1,7 @@
 # Claude Code Product Workflow
 
+**[github.com/andreasspiegler/claude-code-product-workflow](https://github.com/andreasspiegler/claude-code-product-workflow)**
+
 A multi-agent setup for Claude Code that turns a product idea into a deployed application — step by step, with human feedback at every phase transition.
 
 ## What This Is
