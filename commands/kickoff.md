@@ -29,7 +29,8 @@ Sobald ich geantwortet habe, starte den Workflow:
 ### Phase 3: Design (product-designer)
 - Erstelle eine Screen-Inventur basierend auf den Issues
 - Generiere UI-Mockups mit Nano Banana Pro
-- Häng die Mockups an die jeweiligen GitHub Issues
+- Lade die Mockups als Bildanhänge direkt in die jeweiligen GitHub Issues hoch
+- Feedback und Design-Freigabe werden als Issue-Kommentare dokumentiert
 - Hol mein Feedback ein bevor du weitermachst
 
 ### Phase 4: Architektur (tech-lead)
@@ -39,11 +40,17 @@ Sobald ich geantwortet habe, starte den Workflow:
 
 ### Phase 5: Implementierung (developer)
 - Arbeite die Tickets mit Design ab, eins nach dem anderen
-- Erstelle Feature-Branches und PRs
+- Issue auf "In Progress" im GitHub Projects Board setzen, bevor die Arbeit beginnt
+- Feature-Branch pro Issue: `feat/<issue-id>-<kurzbeschreibung>`
+- PR erstellen mit `Closes #<issue-id>` in der Beschreibung und Screenshots für UI-Änderungen
+- Issue auf "Review" setzen, wenn der PR geöffnet wird
 - Nutze die v0-generierten Komponenten aus Phase 3
 
 ### Phase 6: QA (qa-lead)
-- Reviewe den Code und teste gegen die Akzeptanzkriterien
+- Reviewe den PR gegen die Akzeptanzkriterien im verlinkten Issue
+- Feedback als PR-Kommentare, bei Problemen "Changes requested"
+- PR approven wenn alle Kriterien erfüllt sind
+- Nach dem Merge: Issue wird automatisch geschlossen und auf "Done" gesetzt
 - Prüfe Edge Cases, Responsive, Accessibility
 - Erstelle eine Release-Checkliste
 
