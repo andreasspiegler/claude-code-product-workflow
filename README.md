@@ -141,12 +141,27 @@ cp skills/nano-banana/SKILL.md ~/.claude/skills/nano-banana/
 
 See [`skills/nano-banana/README.md`](skills/nano-banana/README.md) for full details.
 
-### 4. Start a project
+### 4. Install the kickoff skill (optional)
 
-Open Claude Code and run:
+The kickoff skill auto-triggers when you tell Claude you want to build something — no explicit command needed.
+
+```bash
+mkdir -p ~/.claude/skills/kickoff
+cp skills/kickoff/SKILL.md ~/.claude/skills/kickoff/
+```
+
+### 5. Start a project
+
+**Option A — explicit command:**
 
 ```
 /kickoff [Your project idea in 1-3 sentences]
+```
+
+**Option B — natural language (requires kickoff skill from step 4):**
+
+```
+Ich möchte eine App bauen, die Freelancern hilft, ihre Zeit zu tracken.
 ```
 
 The product-manager agent will ask clarifying questions about scope, platform, timeline, and tech preferences before setting up the project.
