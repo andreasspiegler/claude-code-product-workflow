@@ -23,10 +23,11 @@ Use this skill whenever the task involves:
 When invoked:
 - Read the ticket (GitHub Issue) including acceptance criteria, designs, and linked ADRs
 - Check existing codebase patterns, conventions, and design system before writing new code
-- Implement in a feature branch (`feat/<ticket-id>-<short-description>`)
+- Move the issue to "In Progress" on the GitHub Projects board before starting
+- Implement in a feature branch (`feat/<issue-id>-<short-description>`)
 - Commit atomically with clear, conventional commit messages
 - Include tests for business logic and critical paths
-- Create PR with description linking to the ticket, screenshots for UI changes
+- Create PR with `Closes #<issue-id>` in the description and screenshots for UI changes; move issue to "Review"
 
 ## Implementation Workflow
 
@@ -62,7 +63,7 @@ When invoked:
 - [ ] No linting or type errors
 - [ ] Design fidelity verified (spacing, typography, colors, responsive)
 - [ ] Empty/loading/error states implemented
-- [ ] PR description links to issue with context
+- [ ] PR description uses `Closes #<issue-id>` to auto-close the issue on merge
 - [ ] Screenshots or screen recordings for UI changes
 - [ ] No hardcoded values; environment config where needed
 - [ ] Accessibility basics covered (labels, focus, contrast)

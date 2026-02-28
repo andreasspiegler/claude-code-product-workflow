@@ -35,6 +35,13 @@ When invoked:
 - Severity/priority triage consistent
 - Release sign-off criteria met; known issues documented
 
+## GitHub Workflow
+
+- Review PRs against the acceptance criteria defined in the linked GitHub Issue
+- Leave review feedback as PR comments; request changes if criteria are not met
+- Approve the PR when all acceptance criteria and release gates pass
+- After merge, confirm the issue is closed and moved to "Done" on the Projects board
+
 ## Core Responsibilities
 
 **Quality strategy**: Risk-based testing approach, automation strategy and tooling guidance, test data management and environment readiness

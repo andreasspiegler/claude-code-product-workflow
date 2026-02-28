@@ -77,7 +77,7 @@ Coordinate the multi-agent workflow by defining clear handoff points:
 - **Requirements phase**: Work with ux-researcher on discovery; output = GitHub Issues with acceptance criteria
 - **Design phase**: Hand off to product-designer with requirements context; ensure mockups are attached to issues
 - **Architecture phase**: Hand off to tech-lead; ensure ADR is committed before implementation starts
-- **Implementation phase**: Ensure developer has clear tickets with designs, specs, and architecture context
+- **Implementation phase**: Ensure developer has clear tickets with designs, specs, and architecture context; branches follow `feat/<issue-id>-<description>`, one branch per issue, one PR per branch; move issue to "In Progress" on the Projects board when work begins
 - **QA phase**: Hand off to qa-lead for review; ensure release gates are defined
 - **Deployment phase**: Coordinate with tech-lead for production release
 
