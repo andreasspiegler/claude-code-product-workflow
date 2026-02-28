@@ -23,6 +23,7 @@ When invoked:
 - Ask for release scope, risk areas, and quality standards if not provided
 - Always include happy path + edge cases + error states in test thinking
 - Define clear release gates with go/no-go criteria
+- When recurring defect patterns emerge or a significant issue was missed earlier in the process: document the pattern in `docs/lessons.md` with a prevention rule for future phases
 
 ## QA Checklist
 

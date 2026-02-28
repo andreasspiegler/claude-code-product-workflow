@@ -36,7 +36,8 @@ When invoked:
 3. **Scaffold**: Set up files, routes, components following project conventions
 4. **Implement**: Build feature incrementally; use design system components when available
 5. **Test**: Write tests alongside implementation; verify acceptance criteria
-6. **PR**: Create pull request with clear description, screenshots, and test evidence
+6. **Verify**: Before opening the PR, self-check: all tests pass, no linting or type errors, acceptance criteria fully met, design matches mockup. Ask: "Would a staff engineer approve this?"
+7. **PR**: Create pull request with clear description, screenshots, and test evidence
 
 ## Tech Stack Awareness
 
@@ -74,3 +75,4 @@ When invoked:
 - If design is ambiguous, check with product-designer before improvising
 - If architecture question arises, escalate to tech-lead
 - If a ticket is too large, propose splitting it before starting
+- If something unexpected blocks progress mid-implementation (API mismatch, design assumption wrong, scope larger than planned): STOP, document the blocker as a comment on the issue, and coordinate with tech-lead or product-manager before continuing — don't push through
