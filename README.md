@@ -4,15 +4,16 @@ A multi-agent setup for Claude Code that turns a product idea into a deployed ap
 
 ## What This Is
 
-A set of **10 specialized Claude Code sub-agents** and a **kickoff command** that orchestrate a complete product development workflow:
+A set of **10 specialized Claude Code sub-agents**, a **kickoff command** for new projects, and a **feature command** for extending existing ones — orchestrating a complete product development workflow with human feedback at every phase transition.
 
 ```
 /kickoff An app that helps freelancers track project time and generate invoices
+/feature Add a dark mode toggle to the existing app
 ```
 
-That single command triggers a structured process: from requirements to design to architecture to implementation to QA to deployment — each phase handled by a specialized agent, each transition requiring your approval.
-
 ## The Workflow
+
+### New Project (`/kickoff`)
 
 ```
 You: "I want to build an app for X"
@@ -41,6 +42,37 @@ qa-lead ──── Code review, test coverage, edge cases, release gates
   ▼ (your final OK)
   │
 tech-lead ──── Deploy via Vercel (triggered by merge to main)
+```
+
+### Existing Project (`/feature`)
+
+```
+You: "I want to add X to the existing app"
+  │
+  ▼
+product-manager ──── Read codebase, check lessons.md, review open issues
+  │
+  ▼
+product-manager + ux-researcher ──── Requirements → new GitHub Issues
+  │
+  ▼ (your feedback)
+  │
+product-designer ──── Mockups consistent with existing design (if UI changes)
+  │
+  ▼ (your feedback, if design phase ran)
+  │
+tech-lead ──── Impact on existing architecture, ADR addendum (if needed)
+  │
+  ▼ (your confirmation, if arch phase ran)
+  │
+developer ──── Read existing patterns first → Feature Branch → PR
+  │
+  ▼
+qa-lead ──── Acceptance criteria + regression testing
+  │
+  ▼ (your final OK)
+  │
+tech-lead ──── Deploy via existing Vercel config
 ```
 
 **You stay in control.** Every phase transition waits for your feedback before proceeding.
@@ -112,11 +144,12 @@ This means: text description → visual mockup → production component — with
 cp agents/*.md ~/.claude/agents/
 ```
 
-### 2. Copy the kickoff command
+### 2. Copy the commands
 
 ```bash
 mkdir -p ~/.claude/commands
 cp commands/kickoff.md ~/.claude/commands/
+cp commands/feature.md ~/.claude/commands/
 ```
 
 ### 3. Install the Nano Banana skill (for UI mockup generation)
@@ -141,30 +174,33 @@ cp skills/nano-banana/SKILL.md ~/.claude/skills/nano-banana/
 
 See [`skills/nano-banana/README.md`](skills/nano-banana/README.md) for full details.
 
-### 4. Install the kickoff skill (optional)
+### 4. Install the skills (optional)
 
-The kickoff skill auto-triggers when you tell Claude you want to build something — no explicit command needed.
+Skills auto-trigger when you describe what you want in natural language — no explicit command needed.
 
 ```bash
 mkdir -p ~/.claude/skills/kickoff
 cp skills/kickoff/SKILL.md ~/.claude/skills/kickoff/
+
+mkdir -p ~/.claude/skills/feature
+cp skills/feature/SKILL.md ~/.claude/skills/feature/
 ```
 
 ### 5. Start a project
 
-**Option A — explicit command:**
+**New project from scratch:**
 
 ```
 /kickoff [Your project idea in 1-3 sentences]
 ```
 
-**Option B — natural language (requires kickoff skill from step 4):**
+**Add a feature to an existing project:**
 
 ```
-Ich möchte eine App bauen, die Freelancern hilft, ihre Zeit zu tracken.
+/feature [What you want to add or improve]
 ```
 
-The product-manager agent will ask clarifying questions about scope, platform, timeline, and tech preferences before setting up the project.
+Both commands will ask clarifying questions before starting the workflow. With the skills installed, you can also just describe what you want in natural language and Claude will pick up the right workflow automatically.
 
 ## Requirements
 

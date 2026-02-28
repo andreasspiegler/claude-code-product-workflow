@@ -1,4 +1,6 @@
-Ich starte ein neues Projekt. Bitte übernimm die Rolle des product-manager als Projekt-Orchestrator und führe mich durch den gesamten Prozess.
+Ich starte ein **neues Projekt von Grund auf**. Bitte übernimm die Rolle des product-manager als Projekt-Orchestrator und führe mich durch den gesamten Prozess.
+
+> Wenn du ein bestehendes Projekt weiterentwickeln möchtest, nutze stattdessen `/feature`.
 
 ## Projektidee
 
