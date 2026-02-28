@@ -18,14 +18,14 @@ That single command triggers a structured process: from requirements to design t
 You: "I want to build an app for X"
   │
   ▼
-product-manager ──── Project setup, GitHub Repo + Board, Milestones
+product-manager ──── GitHub Repo + GitHub Projects Board + Milestones
   │
   ▼
 product-manager + ux-researcher ──── Discovery, Requirements → GitHub Issues
   │
   ▼ (your feedback)
   │
-product-designer ──── UI Mockups via Nano Banana Pro → attached to Issues
+product-designer ──── UI Mockups via Nano Banana Pro → uploaded to Issues
   │
   ▼ (your feedback)
   │
@@ -33,14 +33,14 @@ tech-lead ──── Architecture, Stack Decision, ADR
   │
   ▼ (your confirmation)
   │
-developer ──── Feature implementation, ticket by ticket → PRs
+developer ──── Feature Branch per Issue → PR → Review → merge to main
   │
   ▼
 qa-lead ──── Code review, test coverage, edge cases, release gates
   │
   ▼ (your final OK)
   │
-tech-lead ──── Deploy via Vercel
+tech-lead ──── Deploy via Vercel (triggered by merge to main)
 ```
 
 **You stay in control.** Every phase transition waits for your feedback before proceeding.
@@ -61,6 +61,38 @@ tech-lead ──── Deploy via Vercel
 | `customer-success` | Adoption & Retention | Onboarding flows, churn analysis, voice of customer |
 
 The core workflow uses 6 agents (product-manager, ux-researcher, product-designer, tech-lead, developer, qa-lead). The remaining 4 are available for deeper analysis when needed.
+
+## GitHub Workflow
+
+All project work lives in GitHub — the single source of truth for code, design, status, and decisions.
+
+### GitHub Projects
+
+Every project gets a **GitHub Projects board** with five columns:
+
+```
+Backlog → Ready → In Progress → Review → Done
+```
+
+Issues move through these columns as work progresses. The board is the primary status view — no separate tool needed. Milestones map to workflow phases (Discovery, Design, Architecture, Implementation, QA, Launch).
+
+### Designs Attached to Issues
+
+All mockups and design assets are **uploaded directly to the corresponding GitHub Issue**. Requirements, designs, and decisions stay in one place.
+
+- Nano Banana Pro mockups → attached as image files to the issue
+- Feedback and approvals → documented as issue comments
+- Design sign-off → confirmed with a comment or label before implementation begins
+
+### Feature Branches and Pull Requests
+
+All implementation work follows a **feature branch → PR → merge** workflow:
+
+- **Branch naming**: `feat/<issue-id>-<short-description>` (e.g. `feat/12-user-auth`)
+- One branch per issue / ticket
+- PRs reference the issue (`Closes #12`) and include screenshots for UI changes
+- Vercel automatically creates a **preview deployment** for every open PR
+- Merging to `main` triggers the production deployment
 
 ## Design Toolchain
 
@@ -155,7 +187,7 @@ A few design decisions behind this setup:
 
 - **Human at every gate.** Agents don't auto-proceed between phases. You review and approve.
 - **3-4 agents per phase, not 10.** More agents = more coordination overhead. Each phase activates only the agents it needs.
-- **GitHub as single source of truth.** Issues, code, and status live in one place. No separate project management tool needed.
+- **GitHub as single source of truth.** Issues, designs, code, and status live in one place — tracked via GitHub Projects. No separate project management tool needed.
 - **"Ask, don't guess."** Every agent is instructed to ask when something is unclear rather than making assumptions.
 
 ## License
