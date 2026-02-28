@@ -194,6 +194,7 @@ Pre-packaged ZIPs are available in [`dist/`](dist/). Upload them via Settings �
 
 - [`dist/kickoff.zip`](dist/kickoff.zip) — new project workflow
 - [`dist/feature.zip`](dist/feature.zip) — feature development on existing projects
+- [`dist/nano-banana.zip`](dist/nano-banana.zip) — AI image generation via Gemini CLI
 
 ### 5. Start a project
 
