@@ -178,6 +178,8 @@ See [`skills/nano-banana/README.md`](skills/nano-banana/README.md) for full deta
 
 Skills auto-trigger when you describe what you want in natural language — no explicit command needed.
 
+**Claude Code:**
+
 ```bash
 mkdir -p ~/.claude/skills/kickoff
 cp skills/kickoff/SKILL.md ~/.claude/skills/kickoff/
@@ -185,6 +187,13 @@ cp skills/kickoff/SKILL.md ~/.claude/skills/kickoff/
 mkdir -p ~/.claude/skills/feature
 cp skills/feature/SKILL.md ~/.claude/skills/feature/
 ```
+
+**Claude Cowork:**
+
+Pre-packaged ZIPs are available in [`dist/`](dist/). Upload them via Settings → Skills in Claude Cowork:
+
+- [`dist/kickoff.zip`](dist/kickoff.zip) — new project workflow
+- [`dist/feature.zip`](dist/feature.zip) — feature development on existing projects
 
 ### 5. Start a project
 
