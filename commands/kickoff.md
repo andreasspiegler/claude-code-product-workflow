@@ -18,6 +18,21 @@ Du kannst den Scope manuell setzen, um die Auto-Detection zu überschreiben:
 | `--scope standard` | Normales Projekt — voller Workflow |
 | `--scope large` | Komplexes Produkt — voller Workflow + extended QA |
 
+## Resume (optional)
+
+Steig direkt bei einer bestimmten Phase ein, ohne von vorne zu beginnen:
+`/kickoff --from requirements|design|architecture|implementation|qa "Deine Projektidee"`
+
+| Flag | Startet bei |
+|---|---|
+| `--from requirements` | Phase 2: Requirements & UX Research |
+| `--from design` | Phase 3: UI Mockups |
+| `--from architecture` | Phase 4: Tech-Entscheidungen |
+| `--from implementation` | Phase 5: Developer-Phase |
+| `--from qa` | Phase 6: QA-Review |
+
+**Kombinierbar:** `/kickoff --scope standard --from design "My app idea"`
+
 ## Dein Auftrag
 
 Bevor du loslegst, stell mir kurze Rückfragen zu:

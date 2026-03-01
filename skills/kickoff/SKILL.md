@@ -43,6 +43,37 @@ Bevor du Rückfragen stellst oder Phasen startest, klassifiziere die Anfrage:
 
 ---
 
+## Resume Detection — Nach Scope Detection ausführen
+
+Prüfe, ob die Anfrage einen `--from` Parameter enthält:
+
+**Syntax:** `--from requirements|design|architecture|implementation|qa`
+
+**Kombinierbar mit `--scope`:** `/kickoff --scope standard --from design "..."`
+
+**Wenn `--from` gesetzt:**
+1. Führe einen **Kontext-Check** durch — bevor du zur Zielphase springst:
+   - Lies offene GitHub Issues im Repo (falls bereits eines erstellt wurde)
+   - Prüfe vorhandene Branches (`git branch -a`)
+   - Prüfe ob `docs/`, ADR-Dateien oder `STATUS.md` existieren
+2. Kommuniziere den Resume-Punkt klar:
+   > *"Resume ab Phase [X]: [Phasenname] — überspringe [Liste der Phasen]"*
+3. **Warnung bei fehlendem Vorarbeitsoutput:** Wenn der erwartete Output vorheriger Phasen fehlt (z.B. kein Repo/Issues bei `--from design`), weise den User darauf hin und frage ob er trotzdem fortfahren möchte.
+4. Springe direkt zur Zielphase — überspringe alle davor liegenden Phasen.
+
+**Phasen-Referenz:**
+| Flag | Startet bei | Setzt voraus |
+|---|---|---|
+| `--from requirements` | Phase 2: Requirements | Repo vorhanden |
+| `--from design` | Phase 3: Design | GitHub Issues vorhanden |
+| `--from architecture` | Phase 4: Architektur | GitHub Issues + ggf. Mockups vorhanden |
+| `--from implementation` | Phase 5: Implementierung | Issues + Architecture-Entscheidung vorhanden |
+| `--from qa` | Phase 6: QA | Offener PR vorhanden |
+
+**Wenn kein `--from` gesetzt:** Normaler Workflow-Start (siehe Before You Start).
+
+---
+
 ## Before You Start
 
 Ask the user these clarifying questions (grouped, not one by one) — **nur bei Scope standard oder large**:

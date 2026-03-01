@@ -45,6 +45,37 @@ Bevor du Rückfragen stellst oder Phasen startest, klassifiziere die Anfrage:
 
 ---
 
+## Resume Detection — Nach Scope Detection ausführen
+
+Prüfe, ob die Anfrage einen `--from` Parameter enthält:
+
+**Syntax:** `--from requirements|design|architecture|implementation|qa`
+
+**Kombinierbar mit `--scope`:** `/feature --scope micro --from implementation "..."`
+
+**Wenn `--from` gesetzt:**
+1. Führe einen **Kontext-Check** durch — bevor du zur Zielphase springst:
+   - Lies offene GitHub Issues im Repo
+   - Prüfe vorhandene Branches (`git branch -a`)
+   - Prüfe ob `docs/` oder ADR-Dateien existieren
+2. Kommuniziere den Resume-Punkt klar:
+   > *"Resume ab Phase [X]: [Phasenname] — überspringe [Liste der Phasen]"*
+3. **Warnung bei fehlendem Vorarbeitsoutput:** Wenn der erwartete Output vorheriger Phasen fehlt (z.B. keine GitHub Issues bei `--from design`), weise den User darauf hin und frage ob er trotzdem fortfahren möchte.
+4. Springe direkt zur Zielphase — überspringe alle davor liegenden Phasen.
+
+**Phasen-Referenz:**
+| Flag | Startet bei | Setzt voraus |
+|---|---|---|
+| `--from requirements` | Phase 2: Requirements | — |
+| `--from design` | Phase 3: Design | GitHub Issues vorhanden |
+| `--from architecture` | Phase 4: Architektur | GitHub Issues vorhanden |
+| `--from implementation` | Phase 5: Implementierung | GitHub Issues + ggf. Design vorhanden |
+| `--from qa` | Phase 6: QA | Offener PR vorhanden |
+
+**Wenn kein `--from` gesetzt:** Normaler Workflow-Start (siehe Before You Start).
+
+---
+
 ## Before You Start
 
 Stell dem User diese Rückfragen (gebündelt, nicht einzeln) — **nur bei Scope standard oder large**:
