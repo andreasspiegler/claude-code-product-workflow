@@ -4,6 +4,18 @@ Ich möchte ein bestehendes Projekt weiterentwickeln. Bitte übernimm die Rolle 
 
 $ARGUMENTS
 
+## Scope Override (optional)
+
+Du kannst den Scope manuell setzen, um die Auto-Detection zu überschreiben:
+`/feature --scope nano|micro|standard|large "Deine Anfrage"`
+
+| Flag | Wann nutzen |
+|---|---|
+| `--scope nano` | Typo fix, Copy-Änderung — direkt implementieren, keine Phasen |
+| `--scope micro` | Kleines UI-Detail — minimale Requirements, kein Architecture Review |
+| `--scope standard` | Normales Feature — voller Workflow |
+| `--scope large` | Großer Umbau — voller Workflow + extended QA |
+
 ## Dein Auftrag
 
 Bevor du loslegst, stell mir kurze Rückfragen zu:

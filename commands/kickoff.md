@@ -6,6 +6,18 @@ Ich starte ein **neues Projekt von Grund auf**. Bitte übernimm die Rolle des pr
 
 $ARGUMENTS
 
+## Scope Override (optional)
+
+Du kannst den Scope manuell setzen, um die Auto-Detection zu überschreiben:
+`/kickoff --scope nano|micro|standard|large "Deine Projektidee"`
+
+| Flag | Wann nutzen |
+|---|---|
+| `--scope nano` | Winzige Einzel-Änderung — direkt implementieren |
+| `--scope micro` | Kleine Änderung — minimale Requirements, kein Architecture Review |
+| `--scope standard` | Normales Projekt — voller Workflow |
+| `--scope large` | Komplexes Produkt — voller Workflow + extended QA |
+
 ## Dein Auftrag
 
 Bevor du loslegst, stell mir kurze Rückfragen zu:
