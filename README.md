@@ -11,6 +11,14 @@ A set of **10 specialized Claude Code sub-agents**, a **kickoff command** for ne
 ```
 /kickoff An app that helps freelancers track project time and generate invoices
 /feature Add a dark mode toggle to the existing app
+
+# Scope override — skip irrelevant phases automatically
+/feature --scope nano Fix the typo in the header
+/kickoff --scope large Build a multi-tenant SaaS platform
+
+# Resume — jump directly to a specific phase
+/feature --from implementation Add dark mode toggle
+/kickoff --from design My app idea
 ```
 
 ## The Workflow
@@ -78,6 +86,35 @@ tech-lead ──── Deploy via existing Vercel config
 ```
 
 **You stay in control.** Every phase transition waits for your feedback before proceeding.
+
+## Scope Detection
+
+Before starting any workflow, the `product-manager` classifies the request and skips phases that don't add value:
+
+| Scope | Criteria | Examples | Skips |
+|---|---|---|---|
+| `nano` | Single words/sentences, no logic change | Typo fix, copy edit | Requirements, Design, Architecture, QA |
+| `micro` | 1–3 files, known pattern, no new concepts | Button styling, small UI detail | Architecture, full Discovery |
+| `standard` | New functionality, multiple files | New page, new feature | — (full workflow) |
+| `large` | New systems, architectural changes | New product, DB migration | — (full workflow + extended QA) |
+
+The scope is auto-detected from the request and communicated upfront. Override anytime with `--scope nano|micro|standard|large`.
+
+## Resumable Workflows
+
+Jump directly to any phase without restarting from the beginning. Useful when a phase needs to be redone or a workflow was interrupted:
+
+```
+/feature --from design "Add dark mode toggle"   # re-run design phase
+/kickoff --from qa "My app"                     # jump straight to QA
+```
+
+The `product-manager` runs a context check before jumping in — reading existing issues, branches, and docs to reconstruct the state. If expected prior outputs are missing, you'll get a warning before proceeding.
+
+**Combinable with `--scope`:**
+```
+/feature --scope micro --from implementation "Fix button color"
+```
 
 ## Agents
 
@@ -212,7 +249,14 @@ Pre-packaged ZIPs are available in [`dist/`](dist/). Upload them via Settings �
 /feature [What you want to add or improve]
 ```
 
-Both commands will ask clarifying questions before starting the workflow. With the skills installed, you can also just describe what you want in natural language and Claude will pick up the right workflow automatically.
+Both commands auto-detect the scope of your request and skip phases that don't add value. With the skills installed, you can also describe what you want in natural language and Claude will pick up the right workflow automatically.
+
+**Optional flags:**
+
+```
+--scope nano|micro|standard|large   Override auto-detected scope
+--from  requirements|design|architecture|implementation|qa   Resume at a specific phase
+```
 
 ## Requirements
 
