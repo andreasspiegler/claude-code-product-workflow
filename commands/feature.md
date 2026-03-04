@@ -9,25 +9,25 @@ $ARGUMENTS
 Du kannst den Scope manuell setzen, um die Auto-Detection zu überschreiben:
 `/feature --scope nano|micro|standard|large "Deine Anfrage"`
 
-| Flag | Wann nutzen |
-|---|---|
-| `--scope nano` | Typo fix, Copy-Änderung — direkt implementieren, keine Phasen |
-| `--scope micro` | Kleines UI-Detail — minimale Requirements, kein Architecture Review |
-| `--scope standard` | Normales Feature — voller Workflow |
-| `--scope large` | Großer Umbau — voller Workflow + extended QA |
+| Flag               | Wann nutzen                                                         |
+| ------------------ | ------------------------------------------------------------------- |
+| `--scope nano`     | Typo fix, Copy-Änderung — direkt implementieren, keine Phasen       |
+| `--scope micro`    | Kleines UI-Detail — minimale Requirements, kein Architecture Review |
+| `--scope standard` | Normales Feature — voller Workflow                                  |
+| `--scope large`    | Großer Umbau — voller Workflow + extended QA                        |
 
 ## Resume (optional)
 
 Steig direkt bei einer bestimmten Phase ein, ohne von vorne zu beginnen:
 `/feature --from requirements|design|architecture|implementation|qa "Deine Anfrage"`
 
-| Flag | Startet bei |
-|---|---|
-| `--from requirements` | Phase 2: Requirements & UX Research |
-| `--from design` | Phase 3: UI Mockups |
-| `--from architecture` | Phase 4: Tech-Entscheidungen |
-| `--from implementation` | Phase 5: Developer-Phase |
-| `--from qa` | Phase 6: QA-Review |
+| Flag                    | Startet bei                         |
+| ----------------------- | ----------------------------------- |
+| `--from requirements`   | Phase 2: Requirements & UX Research |
+| `--from design`         | Phase 3: UI Mockups                 |
+| `--from architecture`   | Phase 4: Tech-Entscheidungen        |
+| `--from implementation` | Phase 5: Developer-Phase            |
+| `--from qa`             | Phase 6: QA-Review                  |
 
 **Kombinierbar:** `/feature --scope micro --from implementation "Fix button color"`
 
@@ -54,22 +54,28 @@ Sobald ich geantwortet habe, starte den Workflow:
 - Schreibe neue GitHub Issues (zum bestehenden Board, passendem Milestone)
 - User Story, Akzeptanzkriterien, Priorität (Must/Should/Could)
 - Frag aktiv nach, wenn Infos fehlen
+- **Erstelle am Ende `docs/handoffs/01_requirements.md` oder aktualisiere es. Inhalt: Zielgruppe, Scope, Liste der Kern-Features (mit Issue-Links) und die wichtigsten Erfolgsmetriken.**
 
 ### Phase 3: Design (product-designer — nur wenn UI-Änderungen)
 - Nur ausführen wenn das Feature UI-Änderungen beinhaltet
+- **Lies zuerst `docs/handoffs/01_requirements.md`, um den Kontext zu verstehen.**
 - Analysiere bestehende Screens auf Konsistenz — neues Design muss passen
 - Generiere Mockups mit Nano Banana, die zum bestehenden Design System passen
 - Lade Mockups als Bildanhänge direkt in die jeweiligen GitHub Issues hoch
 - Hol mein Feedback ein bevor du weitermachst
+- **Erstelle am Ende `docs/handoffs/02_design.md` oder aktualisiere es. Inhalt: Liste aller Screens/Komponenten, Design-Entscheidungen (Farben, Stil) und Links zu den Issues mit den Mockups.**
 
 ### Phase 4: Architektur (tech-lead — nur bei größeren Features)
 - Nur ausführen wenn das Feature neue APIs, Datenmodell-Änderungen oder neue Services braucht
+- **Lies zuerst `docs/handoffs/01_requirements.md` und `docs/handoffs/02_design.md`.**
 - Bewerte den Impact auf die bestehende Architektur
 - Ergänze das bestehende ADR oder erstelle ein Addendum — kein neues ADR von Grund auf
 - Identifiziere Integrationspunkte und Risiken
 - Hol mein Feedback ein bevor du weitermachst
+- **Erstelle am Ende `docs/handoffs/03_architecture.md` oder aktualisiere es. Inhalt: Gewählter Stack, Datenmodell (Grobkonzept), Architektur-Entscheidungen und externe Abhängigkeiten.**
 
 ### Phase 5: Implementierung (developer)
+- **Lies zuerst ALLE Dokumente in `docs/handoffs/`, um das Gesamtbild zu haben, bevor du Code schreibst.**
 - Lies zuerst die bestehenden Code-Patterns, bevor du mit dem Schreiben beginnst
 - Issue auf "In Progress" im GitHub Projects Board setzen
 - Feature-Branch pro Issue: `feat/<issue-id>-<kurzbeschreibung>`

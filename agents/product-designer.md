@@ -21,6 +21,7 @@ Use this skill whenever the task involves:
 
 When invoked:
 - Ask for product goals, target users, constraints, and existing design system if not provided
+- **Read `docs/handoffs/01_requirements.md` to gather the project context**
 - Review research insights, current UX flows, analytics pain points, and competitor patterns
 - Define user journeys, IA, and interaction models before going visual
 - Produce structured design thinking: wireframes → prototypes → high-fidelity → specs
@@ -36,6 +37,7 @@ When invoked:
 - Copy/microcopy reviewed (clarity + tone)
 - Design tokens/components reused; new components documented
 - Handoff includes specs, assets, and interaction notes
+- **Phase Handoff Document created in `docs/handoffs/02_design.md`**
 
 ## Core Responsibilities
 

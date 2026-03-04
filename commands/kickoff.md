@@ -11,25 +11,25 @@ $ARGUMENTS
 Du kannst den Scope manuell setzen, um die Auto-Detection zu überschreiben:
 `/kickoff --scope nano|micro|standard|large "Deine Projektidee"`
 
-| Flag | Wann nutzen |
-|---|---|
-| `--scope nano` | Winzige Einzel-Änderung — direkt implementieren |
-| `--scope micro` | Kleine Änderung — minimale Requirements, kein Architecture Review |
-| `--scope standard` | Normales Projekt — voller Workflow |
-| `--scope large` | Komplexes Produkt — voller Workflow + extended QA |
+| Flag               | Wann nutzen                                                       |
+| ------------------ | ----------------------------------------------------------------- |
+| `--scope nano`     | Winzige Einzel-Änderung — direkt implementieren                   |
+| `--scope micro`    | Kleine Änderung — minimale Requirements, kein Architecture Review |
+| `--scope standard` | Normales Projekt — voller Workflow                                |
+| `--scope large`    | Komplexes Produkt — voller Workflow + extended QA                 |
 
 ## Resume (optional)
 
 Steig direkt bei einer bestimmten Phase ein, ohne von vorne zu beginnen:
 `/kickoff --from requirements|design|architecture|implementation|qa "Deine Projektidee"`
 
-| Flag | Startet bei |
-|---|---|
-| `--from requirements` | Phase 2: Requirements & UX Research |
-| `--from design` | Phase 3: UI Mockups |
-| `--from architecture` | Phase 4: Tech-Entscheidungen |
-| `--from implementation` | Phase 5: Developer-Phase |
-| `--from qa` | Phase 6: QA-Review |
+| Flag                    | Startet bei                         |
+| ----------------------- | ----------------------------------- |
+| `--from requirements`   | Phase 2: Requirements & UX Research |
+| `--from design`         | Phase 3: UI Mockups                 |
+| `--from architecture`   | Phase 4: Tech-Entscheidungen        |
+| `--from implementation` | Phase 5: Developer-Phase            |
+| `--from qa`             | Phase 6: QA-Review                  |
 
 **Kombinierbar:** `/kickoff --scope standard --from design "My app idea"`
 
@@ -55,20 +55,26 @@ Sobald ich geantwortet habe, starte den Workflow:
 - Erarbeite im Dialog mit mir die Kernfeatures
 - Schreibe für jedes Feature ein GitHub Issue mit User Story, Akzeptanzkriterien und Priorität (Must/Should/Could)
 - Frag aktiv nach, wenn Infos fehlen
+- **Erstelle am Ende `docs/handoffs/01_requirements.md`. Dieses Dokument muss enthalten: Zielgruppe, Scope, Liste der Kern-Features (mit Issue-Links) und die wichtigsten Erfolgsmetriken.**
 
 ### Phase 3: Design (product-designer)
+- **Lies zuerst `docs/handoffs/01_requirements.md`, um den Kontext zu verstehen.**
 - Erstelle eine Screen-Inventur basierend auf den Issues
 - Generiere UI-Mockups mit Nano Banana Pro
 - Lade die Mockups als Bildanhänge direkt in die jeweiligen GitHub Issues hoch
 - Feedback und Design-Freigabe werden als Issue-Kommentare dokumentiert
 - Hol mein Feedback ein bevor du weitermachst
+- **Erstelle am Ende `docs/handoffs/02_design.md`. Inhalt: Liste aller Screens/Komponenten, Design-Entscheidungen (Farben, Stil) und Links zu den Issues mit den Mockups.**
 
 ### Phase 4: Architektur (tech-lead)
+- **Lies zuerst `docs/handoffs/01_requirements.md` und `docs/handoffs/02_design.md`.**
 - Schlage einen Tech Stack vor basierend auf Requirements und Scope
 - Erstelle ein Architecture Decision Record (ADR) im Repo
 - Kläre offene technische Fragen mit mir
+- **Erstelle am Ende `docs/handoffs/03_architecture.md`. Inhalt: Gewählter Stack, Datenmodell (Grobkonzept), Architektur-Entscheidungen und externe Abhängigkeiten.**
 
 ### Phase 5: Implementierung (developer)
+- **Lies zuerst ALLE Dokumente in `docs/handoffs/`, um das Gesamtbild zu verstehen, bevor du Code schreibst.**
 - Arbeite die Tickets mit Design ab, eins nach dem anderen
 - Issue auf "In Progress" im GitHub Projects Board setzen, bevor die Arbeit beginnt
 - Feature-Branch pro Issue: `feat/<issue-id>-<kurzbeschreibung>`

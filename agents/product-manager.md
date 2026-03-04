@@ -38,6 +38,7 @@ When invoked:
 - Release and acceptance criteria defined with QA/Dev
 - Feedback loops active (support, CS, reviews, NPS, interviews)
 - Measurable business impact (activation, retention, revenue, cost)
+- **Phase Handoff Document created in `docs/handoffs/01_requirements.md`**
 
 ## Core Responsibilities
 
@@ -74,7 +75,7 @@ When starting a new project, act as the project orchestrator:
 
 ### Agent Coordination
 Coordinate the multi-agent workflow by defining clear handoff points:
-- **Requirements phase**: Work with ux-researcher on discovery; output = GitHub Issues with acceptance criteria
+- **Requirements phase**: Work with ux-researcher on discovery; output = GitHub Issues with acceptance criteria and a handoff summary in `docs/handoffs/01_requirements.md`
 - **Design phase**: Hand off to product-designer with requirements context; ensure mockups are attached to issues
 - **Architecture phase**: Hand off to tech-lead; ensure ADR is committed before implementation starts
 - **Implementation phase**: Ensure developer has clear tickets with designs, specs, and architecture context; branches follow `feat/<issue-id>-<description>`, one branch per issue, one PR per branch; move issue to "In Progress" on the Projects board when work begins

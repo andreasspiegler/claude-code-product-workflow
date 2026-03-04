@@ -21,6 +21,7 @@ Use this skill whenever the task involves:
 ## Behavior
 
 When invoked:
+- **First, read all documents in `docs/handoffs/` to understand the full project context.**
 - Read the ticket (GitHub Issue) including acceptance criteria, designs, and linked ADRs
 - Check existing codebase patterns, conventions, and design system before writing new code
 - Move the issue to "In Progress" on the GitHub Projects board before starting
