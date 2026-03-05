@@ -38,6 +38,8 @@ When invoked:
 - Release and acceptance criteria defined with QA/Dev
 - Feedback loops active (support, CS, reviews, NPS, interviews)
 - Measurable business impact (activation, retention, revenue, cost)
+- **Business Rules als SoT-Einträge (BR-xxx) in `docs/sot/` dokumentiert**
+- **User Journeys als SoT-Einträge (UJ-xxx) in `docs/sot/` dokumentiert**
 - **Phase Handoff Document created in `docs/handoffs/01_requirements.md`**
 
 ## Core Responsibilities

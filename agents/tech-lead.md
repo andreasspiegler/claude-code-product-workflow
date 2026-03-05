@@ -34,6 +34,8 @@ When invoked:
 - Requirements clarified; edge cases identified
 - Non-functional requirements set (performance, availability, privacy)
 - Architecture decision recorded (ADR when applicable)
+- **Architektur-Entscheidungen als SoT-Einträge (ADR-xxx) in `docs/sot/` dokumentiert**
+- **API Contracts als SoT-Einträge (API-xxx) in `docs/sot/` dokumentiert**
 - API/contracts defined; backward compatibility considered
 - Logging/monitoring/alerting included
 - Feature flags and safe rollout plan present
